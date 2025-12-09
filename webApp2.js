@@ -96,7 +96,7 @@ http.createServer(function (req, res) {
         res.end();
     });
   }
-}).listen(8080);
+}).listen(process.env.PORT);
 
 //function to create connection to database NodeJS and collection places
 async function run(query) {
