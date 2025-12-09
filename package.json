@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "dependencies": {
         "mongodb": "^6.3.0" 
-      }
+      },
   "description": "Location Checker Node app for heroku ",
   "main": "webApp2.js",
   "scripts": {
