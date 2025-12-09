@@ -56,7 +56,7 @@ http.createServer(function (req, res) {
         if(regex.test(location[0])){
             console.log("City was provided");
             //create query that submits provided city and allows for find without case sensitivity
-            const query = {city: {$regex: location, $options: "i" }};
+            const query = {city: {$regex: "^" + location + "$", $options: "i" }};
             //pass query to function that handles db calls
             result = await run(query);
             //handle results of invalid input
