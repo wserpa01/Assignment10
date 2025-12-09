@@ -1,0 +1,5 @@
+<div id="formWrapper">
+<form method='post' action='/process'>
+<input type='text' name='location'>
+<br/><input type='submit'></form>
+</div>
