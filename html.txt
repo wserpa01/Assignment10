@@ -1,5 +1,5 @@
 <div id="formWrapper">
 <form method='post' action='/process'>
-<input type='text' name='location'>
-<br/><input type='submit'></form>
+<input type='text' name='location' style='border: 1px #000 solid; border-radius: 8px; font-size: 24px; margin-top: 10px; margin-bottom: 10px' required>
+<br/><input type='submit' style='border: 1px #000 solid; border-radius: 8px; font-size: 24px;'></form>
 </div>
