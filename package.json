@@ -1,10 +1,10 @@
 {
-  "name": "helloapp",
+  "name": "Location Checker",
   "version": "1.0.0",
-  "description": "example node app for heroku ",
-  "main": "hello_heroku.js",
+  "description": "Location Checker Node app for heroku ",
+  "main": "webApp2.js",
   "scripts": {
-  "start": "node hello_heroku.js"
+  "start": "node webApp2.js"
 },
   "repository": {
   "type": "git",
