@@ -77,7 +77,6 @@ http.createServer(function (req, res) {
             const query = {zips: location};
             //pass query to function that handles db calls
             result = await run(query);
-            console.log(result);
             //handle results of invalid input
             if(result.length == 0){
                 console.log("The Zip Code provided, " + location + ", does not exist in the database.");
