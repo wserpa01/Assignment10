@@ -24,8 +24,8 @@ http.createServer(function (req, res) {
   //create view for Home / default path
   if (path == '/')
   {
-    res.write ("<h1>Home</h1>");
-    res.write ("<div>Please enter a Zip Code (#####) or a City: ");
+    res.write ("<h1 style='margin-left: 50px; margin-top: 50px'>Home</h1>");
+    res.write ("<div style='font-size: 24px; margin-left: 50px; margin-top: 10px'>Please enter a Zip Code (#####) or a City: ");
 
     // read in html.txt file with html for form and write to page
     filehtml = "html.txt";
@@ -51,7 +51,7 @@ http.createServer(function (req, res) {
 
         let result;
         
-        res.write("<div id='processWrapper'>");
+        res.write("<div id='processWrapper' style='font-size: 24px; margin-left: 50px'>");
         //if entered location starts with a letter, handle city input
         if(regex.test(location[0])){
             console.log("City was provided");
@@ -62,13 +62,13 @@ http.createServer(function (req, res) {
             //handle results of invalid input
             if(result.length == 0){
                 console.log("The city provided, " + location + ", does not exist in the database.");
-                res.write("<div>The city provided, " + location + ", does not exist in the database.</div>");
+                res.write("<div style='margin-top: 50px'>The city provided, " + location + ", does not exist in the database.</div>");
             //handle results of valid input
             }else{
                 console.log("The City provided is: " + result[0].city);
                 console.log("the City " + result[0].city  + " has the following Zip Code(s): " + result[0].zips.toString().replaceAll(",", ", "));
-                res.write("<div>The City provided is: " + result[0].city + "</div>");
-                res.write("<div>the City " + result[0].city + " has the following zip code(s): " + result[0].zips.toString().replaceAll(",", ", ") + "</div>");
+                res.write("<div style='margin-top: 50px'>The City provided is: " + result[0].city + "</div>");
+                res.write("<div style='margin-top: 10px'>The City " + result[0].city + " has the following zip code(s): " + result[0].zips.toString().replaceAll(",", ", ") + "</div>");
             }
         //if entered location does not start with a letter, handle city input
         }else{
@@ -81,22 +81,22 @@ http.createServer(function (req, res) {
             //handle results of invalid input
             if(result.length == 0){
                 console.log("The Zip Code provided, " + location + ", does not exist in the database.");
-                res.write("<div>The Zip Code provided, " + location + ", does not exist in the database.</div>");
+                res.write("<div style='margin-top: 50px'>The Zip Code provided, " + location + ", does not exist in the database.</div>");
             //handle results of valid input
             }else{
                 console.log("The Zip Code provided is " + location);
                 console.log("The Zip Code belongs to: " + result[0].city);
                 console.log("the City " + result[0].city + " has the following zip code(s): " + result[0].zips.toString().replaceAll(",", ", "));
-                res.write("<div>The Zip Code provided is: " + location + "</div>");
-                res.write("<div>The Zip Code belongs to: " + result[0].city + "</div>");
-                res.write("<div>the City " + result[0].city + " has the following zip code(s): " + result[0].zips.toString().replaceAll(",", ", ") + "</div>");
+                res.write("<div style='margin-top: 50px'>The Zip Code provided is: " + location + "</div>");
+                res.write("<div style='margin-top: 10px'>The Zip Code belongs to: " + result[0].city + "</div>");
+                res.write("<div style='margin-top: 10px'>The City " + result[0].city + " has the following zip code(s): " + result[0].zips.toString().replaceAll(",", ", ") + "</div>");
             }
         }
         res.write("</div>");
         res.end();
     });
   }
-}).listen(process.env.PORT);
+}).listen(8080);
 
 //function to create connection to database NodeJS and collection places
 async function run(query) {
